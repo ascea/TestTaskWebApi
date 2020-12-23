@@ -3,4 +3,4 @@
 Возможные запросы:
 ~/api/order
 ~/api/order/{clientId}
-~/api/order/{year}/{mounth}/{day}
+~/api/order/{year}/{month}/{day}
