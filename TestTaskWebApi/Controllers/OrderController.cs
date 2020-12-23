@@ -28,14 +28,14 @@ namespace TestTaskWebApi.Controllers
             IEnumerable<Order> orders = orderRep.GetOrders(clientId);
             return Ok(orders);
         }
-        [HttpGet("{year}/{mounth}/{day}")]
-        public ActionResult<IEnumerable<Order>> Get(int year, int mounth, int day)
+        [HttpGet("{year}/{month}/{day}")]
+        public ActionResult<IEnumerable<Order>> Get(int year, int month, int day)
         {
-            if ((mounth < 0 || mounth > 12) || (day < 0 || day > 31))
+            if ((month < 0 || month > 12) || (day < 0 || day > 31))
             {
                 return BadRequest();
             }
-            DateTime dateTime = new DateTime(year, mounth, day);
+            DateTime dateTime = new DateTime(year, month, day);
             IEnumerable<Order> orders = orderRep.GetOrders(dateTime);
             return Ok(orders);
         }
